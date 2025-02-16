@@ -17,7 +17,7 @@ const InitialSplashScreen: React.FC = () => {
       <ImageBackground
         source={require('../../assets/Img/maxwell-init.png')}
         style={styles.logo}
-        resizeMode="contain"
+        resizeMode="cover"
       />
     </View>
   );
