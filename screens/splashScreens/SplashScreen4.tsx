@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, ImageBackground, StatusBar, TouchableOpacity, Image, Pressable, Text } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface SplashScreenProps {
   onNext: () => void;
@@ -10,7 +10,7 @@ const SplashScreen4: React.FC<SplashScreenProps> = ({ onNext }) => (
   <View style={styles.container}>
     <ImageBackground source={require('../../assets/Img/splash4.png')} style={styles.backgroundImage}>
     <LinearGradient
-        colors={['#101828', '#10182800']}
+        colors={['rgba(16, 24, 40, 0.8)', 'rgba(16, 24, 40, 0)']}
         style={styles.gradientOverlayOnboarding}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 0.7 }}
@@ -18,7 +18,7 @@ const SplashScreen4: React.FC<SplashScreenProps> = ({ onNext }) => (
       
       {/* Overlay liner */}
       <LinearGradient
-        colors={['#FFFFFF', '#101828']}
+        colors={['rgba(255, 255, 255, 0)', 'rgba(16, 24, 40, 0.8)']}
         style={styles.gradientOverlayOverlay}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 0.7 }}
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
+    // zIndex: 1,
   },
   gradientOverlayOverlay: {
     position: 'absolute',
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
+    // zIndex: 1,
   },
   subStatus: {
     width: '100%',

@@ -2,9 +2,7 @@ import React from 'react';
 import { View, StyleSheet, ImageBackground, StatusBar, TouchableOpacity, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import LinearGradient from 'react-native-linear-gradient';
-
-// Define the navigation parameter types
+import { LinearGradient } from 'expo-linear-gradient';
 type RootStackParamList = {
   SplashContainer: undefined;
   Login: undefined;
@@ -19,21 +17,20 @@ const LastSplash: React.FC = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../../assets/Img/splash6.png')} style={styles.backgroundImage}>
-      <LinearGradient
-        colors={['#101828', '#10182800']}
+        </ImageBackground>
+        <LinearGradient
+        colors={['rgba(16, 24, 40, 0.8)', 'rgba(16, 24, 40, 0)']}
         style={styles.gradientOverlayOnboarding}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 0.7 }}
       />
       
-      {/* Overlay liner */}
       <LinearGradient
-        colors={['#FFFFFF', '#101828']}
+        colors={['rgba(255, 255, 255, 0)', 'rgba(16, 24, 40, 0.8)']}
         style={styles.gradientOverlayOverlay}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 0.7 }}
       />
-        </ImageBackground>
       <StatusBar barStyle="light-content" />
 
       <View style={styles.subContainer}>

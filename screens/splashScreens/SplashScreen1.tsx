@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, ImageBackground, StatusBar, TouchableOpacity, Image, Pressable, Text } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface SplashScreenProps {
   onNext: () => void;
@@ -9,17 +9,15 @@ interface SplashScreenProps {
 const SplashScreen1: React.FC<SplashScreenProps> = ({ onNext }) => (
   <View style={styles.container}>
     <ImageBackground source={require('../../assets/Img/splash1.png')} style={styles.backgroundImage}>
- {/* Onboarding liner */}
  <LinearGradient
-        colors={['#101828', '#10182800']}
+        colors={['rgba(16, 24, 40, 0.8)', 'rgba(16, 24, 40, 0)']}
         style={styles.gradientOverlayOnboarding}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 0.7 }}
       />
       
-      {/* Overlay liner */}
       <LinearGradient
-        colors={['#FFFFFF', '#101828']}
+        colors={['rgba(255, 255, 255, 0)', 'rgba(16, 24, 40, 0.8)']}
         style={styles.gradientOverlayOverlay}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 0.7 }}
@@ -43,7 +41,7 @@ const SplashScreen1: React.FC<SplashScreenProps> = ({ onNext }) => (
     </View>
     <View style={styles.slideIndicatorBox}>
     <Pressable style={styles.button}>
-    <Image source={require('../../assets/indicators/indicator-a1.png')} style={styles.slideIndicator} />
+    <Image source={require('../../assets/indicators/indicator-a1.png')}  />
     </Pressable>
     <TouchableOpacity style={styles.button} onPress={onNext}>
       <Image source={require('../../assets/indicators/indicator-a.png')} style={styles.buttonImage} />
@@ -80,8 +78,6 @@ const styles = StyleSheet.create({
   subStatus: {
     width: '100%',
     flex: 1,
-    // top: 16, 
-    // position: 'absolute',
     flexDirection: 'row',
     justifyContent:'space-between',
     alignItems: 'center',
@@ -99,7 +95,6 @@ const styles = StyleSheet.create({
   },
   introBox: {
     marginTop: 326,
-    // position: 'absolute',
     gap: 16,
   },
   introText1: {
@@ -129,13 +124,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  slideIndicator: {
-    // flex: 1,
-
-    // width: 118,
-    // height: 10,
-    // backgroundColor: 'transparent',
-  },
   slideIndicatorBox: {
     flex: 1,
     width: '100%',
@@ -148,10 +136,6 @@ const styles = StyleSheet.create({
   button: {
     flex: 1,
     justifyContent: 'center',
-    // position: 'absolute',
-    // bottom: 50,
-    // right: 20,
-    // justifyContent: 'center',
   },
   buttonImage: {
     width: 70,
